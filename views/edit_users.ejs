@@ -1,0 +1,56 @@
+<%- include('layouts/header') %>
+    <div class="container">
+        <div class="row">
+            <div class="contents">
+                <h1>Edit users page (
+                    <%= user.name %> )</h1>
+                <div class="card">
+                    <form action="/update/<%= user._id %>" method="post">
+                        <label for="user_name">Name</label>
+                        <input type="text" name="user_name" id="user_name" value="<%= user.name %>">
+                        <br>
+                        <label for="name">Email</label>
+                        <input type="email" name="user_email" id="user_email" value="<%= user.email %>">
+                        <br>
+                        <label for=" name ">Phone</label>
+                        <input type="number " name="user_phone " id="user_phone " value="<%=user.phone %>">
+                        <br>
+                        <input type="submit" value="Add User">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .container {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+        
+        .card {
+            /* Add shadows to create the "card" effect */
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+        /* On mouse-over, add a deeper shadow */
+        
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+        /* Add some padding inside the card container */
+        
+        .container {
+            padding: 2px 16px;
+        }
+        
+        .card form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+    <%- include('layouts/footer')%>

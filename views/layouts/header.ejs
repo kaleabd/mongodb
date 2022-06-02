@@ -1,0 +1,92 @@
+<div class="main-container">
+    <h1>XYZ CO.<sup>TM</sup></h1>
+    <div class="navbar-container">
+        <i class="fa fa-navicon"></i>
+
+        <ul>
+            <li><i class="fa fa-home"></i><a href="/">HOME</a></i>
+                <li><i class="fa fa-plus"></i><a href="/add">ADD USER</a></li>
+                <li><i class="fa fa-heart"></i><a href="/contact">CONTACT</a></li>
+        </ul>
+    </div>
+</div>
+<style>
+    * {
+        font-family: "Roboto Mono", monospace;
+    }
+    
+    .main-container {
+        display: flex;
+        justify-content: space-between;
+        background-color: #cce9ff;
+    }
+    
+    .main-container h1 {
+        font-size: 2rem;
+        font-weight: bolder;
+        margin-left: 3rem;
+    }
+    
+    .navbar-container ul {
+        display: inline-flex;
+        list-style: none;
+        margin-right: 2rem;
+    }
+    
+    ul {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .navbar-container ul li,
+    ul li i {
+        text-align: center;
+        margin-left: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        transition: all 200ms ease-in;
+    }
+    
+    .navbar-container ul li:hover {
+        transition: all 200ms ease-out;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    
+    li {
+        font-size: 1.2rem;
+    }
+    
+    li a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    li i {
+        padding-right: 0.5rem;
+    }
+    
+    .fa-navicon {
+        opacity: 0;
+    }
+    
+    @media screen and (max-width: 1000px) {
+        .main-container h1 {
+            font-size: 1.5rem;
+        }
+        .fa-navicon:before {
+            font-size: 2rem;
+        }
+        .fa-navicon {
+            margin-top: 1rem;
+            margin-right: 2rem;
+            opacity: 1;
+        }
+        .navbar-container ul {
+            display: none;
+            opacity: 0;
+        }
+    }
+</style>

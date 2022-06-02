@@ -1,0 +1,81 @@
+<%- include('layouts/header') %>
+    <div class="container">
+        <div class="row">
+            <% if (message && users != ''){%>
+                <div class="alert">
+                    <strong> <%= message.message %> </strong>
+                </div>
+                <%}%>
+                    <div class="contents">
+                        <div class="table-responsive">
+                            <% if (users != '') { %>
+                                <table class="tables">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>NAME</th>
+                                            <th>EMAIL</th>
+                                            <th>PHONE</th>
+                                            <th>ACTION</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% users.forEach((row, index) => { %>
+                                            <tr>
+                                                <td>
+                                                    <%= index %>
+                                                </td>
+                                                <td>
+                                                    <%= row.name %>
+                                                </td>
+                                                <td>
+                                                    <%= row.email %>
+                                                </td>
+                                                <td>
+                                                    <%= row.phone %>
+                                                </td>
+                                                <td>
+                                                    <a href="/edit/<%= row._id %>">edit</a>
+                                                    <a href="/delete/<%= row._id %>">delete</a>
+                                                </td>
+
+                                            </tr>
+                                            <% }) %>
+                                    </tbody>
+                                </table>
+                                <% }  else { %>
+                                    <h1> no users found in the data base!</h1>
+                                    <% } %>
+
+                        </div>
+                    </div>
+        </div>
+    </div>
+    <style>
+        .container {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+        
+        .tables tr th {
+            text-align: center;
+            padding-right: 2rem;
+            padding-left: 2rem;
+            border-bottom: 2px solid black;
+        }
+        
+        tbody td {
+            width: 200px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        
+        .alert {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            background-color: #ccffd6;
+            border-radius: 5px;
+        }
+    </style>
+    <%- include('layouts/footer')%>
